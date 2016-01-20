@@ -14,4 +14,11 @@ class College: NSObject
     var location: String = ""
     var enrollment: Int = 0
     var image: UIImage = UIImage()
+    
+    init(n: String, l: String, e: Int)
+    {
+        name = n;
+        location = l
+        enrollment = e
+    }
 }
