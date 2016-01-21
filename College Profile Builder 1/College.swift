@@ -21,4 +21,9 @@ class College: NSObject
         location = l
         enrollment = e
     }
+    
+    override
+    init()
+    {
+    }
 }
