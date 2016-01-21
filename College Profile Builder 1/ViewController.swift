@@ -82,7 +82,38 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBAction func addButtonPressed(sender: AnyObject)
     {
-        
+        let alert = UIAlertController(title: "Add College", message: nil, preferredStyle: .Alert)
+        alert.addTextFieldWithConfigurationHandler
+            { (textField) -> Void in
+                textField.placeholder = "Add Name Here"
+        }
+        alert.addTextFieldWithConfigurationHandler
+            { (textField) -> Void in
+                textField.placeholder = "Add Location Here"
+        }
+        alert.addTextFieldWithConfigurationHandler
+            { (textField) -> Void in
+                textField.placeholder = "Add Number Here"
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        alert.addAction(cancelAction)
+        let addAction = UIAlertAction(title: "Add", style: .Default)
+            { (action) -> Void in
+                let name = (alert.textFields![0] as UITextField).text
+                let location = (alert.textFields![1] as UITextField).text
+                let num = (alert.textFields![2] as UITextField).text
+                if let x = Int(num!)
+                {
+                    self.colleges.append(College(n: name!, l: location!, e: x))
+                }
+                else
+                {
+                    self.colleges.append(College(n: name!, l: location!, e: 0))
+                }
+                self.tableView.reloadData()
+        }
+        alert.addAction(addAction)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
@@ -94,4 +125,3 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
 }
-
