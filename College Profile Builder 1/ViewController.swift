@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var colleges = [College]()
     
     var change = College()
-    var ind:Int = 0
+    var ind:Int = -1
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var editingButton: UIBarButtonItem!
