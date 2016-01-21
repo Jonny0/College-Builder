@@ -22,6 +22,15 @@ class College: NSObject
         enrollment = e
     }
     
+    init(n: String, l: String, e: Int, i: UIImage)
+    {
+        name = n;
+        location = l
+        enrollment = e
+        image = i
+    }
+
+    
     override
     init()
     {
