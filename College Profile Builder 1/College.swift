@@ -12,7 +12,7 @@ class College: NSObject
 {
     var name: String = ""
     var location: String = ""
-    var enrollment: Int = 0
+    var enrollment: Int = -1
     var image: UIImage = UIImage()
     
     init(n: String, l: String, e: Int)
