@@ -101,20 +101,26 @@
                                 <rect key="frame" x="252" y="238" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="locationEnded:" destination="mG4-NI-kvB" eventType="editingDidEndOnExit" id="Ndf-2i-7wn"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K4g-Xh-X0I">
                                 <rect key="frame" x="252" y="200" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="nameEnded:" destination="mG4-NI-kvB" eventType="editingDidEndOnExit" id="WbH-KI-Hda"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kWO-5m-fda">
                                 <rect key="frame" x="252" y="276" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="numberEnded:" destination="mG4-NI-kvB" eventType="editingDidEndOnExit" id="vvh-S7-wwH"/>
+                                </connections>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iiE-26-aSC">
-                                <rect key="frame" x="180" y="64" width="240" height="128"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYp-xC-Wod">
                                 <rect key="frame" x="283" y="314" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
@@ -122,13 +128,21 @@
                                     <action selector="savePressed:" destination="mG4-NI-kvB" eventType="touchUpInside" id="4uK-p1-dV4"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iiE-26-aSC">
+                                <rect key="frame" x="180" y="28" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="XYp-xC-Wod" firstAttribute="top" secondItem="kWO-5m-fda" secondAttribute="bottom" constant="10" id="1a8-db-4iX"/>
                             <constraint firstItem="ak4-rl-fee" firstAttribute="centerX" secondItem="NPc-mH-gnF" secondAttribute="centerX" id="3KM-qo-xZY"/>
+                            <constraint firstItem="ak4-rl-fee" firstAttribute="top" secondItem="K4g-Xh-X0I" secondAttribute="bottom" constant="10" id="OFZ-o5-Ojl"/>
+                            <constraint firstItem="kWO-5m-fda" firstAttribute="top" secondItem="ak4-rl-fee" secondAttribute="bottom" constant="10" id="SAw-Pf-Tj6"/>
+                            <constraint firstItem="K4g-Xh-X0I" firstAttribute="top" secondItem="iiE-26-aSC" secondAttribute="bottom" constant="10" id="XQu-mn-Jz9"/>
                             <constraint firstItem="kWO-5m-fda" firstAttribute="centerX" secondItem="NPc-mH-gnF" secondAttribute="centerX" id="a95-Hg-C8z"/>
                             <constraint firstItem="XYp-xC-Wod" firstAttribute="centerX" secondItem="NPc-mH-gnF" secondAttribute="centerX" id="bKb-vU-bRi"/>
                             <constraint firstItem="K4g-Xh-X0I" firstAttribute="centerX" secondItem="NPc-mH-gnF" secondAttribute="centerX" id="qtp-Fw-isx"/>
+                            <constraint firstItem="iiE-26-aSC" firstAttribute="top" secondItem="66U-8n-x7l" secondAttribute="bottom" constant="10" id="teZ-su-a8f"/>
                             <constraint firstItem="iiE-26-aSC" firstAttribute="centerX" secondItem="NPc-mH-gnF" secondAttribute="centerX" id="tgL-RJ-APl"/>
                         </constraints>
                     </view>

@@ -22,11 +22,26 @@ class Detailed: UIViewController
     {
         college.name = nameField.text!
         college.location = locationField.text!
-        if let n = Int(numberField.text!)
+                if let n = Int(numberField.text!)
         {
             college.enrollment = n
         }
         performSegueWithIdentifier("show", sender: self)
+    }
+    
+    @IBAction func nameEnded(sender: AnyObject)
+    {
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func numberEnded(sender: AnyObject)
+    {
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func locationEnded(sender: AnyObject)
+    {
+        sender.resignFirstResponder()
     }
     
     override func viewDidLoad()

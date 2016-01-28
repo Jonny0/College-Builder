@@ -19,8 +19,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet var editingButton: UIBarButtonItem!
     override func viewDidLoad()
     {
-        colleges.append(College(n: "name0",l: "location0",e: 0))
-        colleges.append(College(n: "name1",l: "location1",e: 0))
+        colleges.append(College(n: "name0",l: "location0",e: 0, i: UIImage(named: "0")!))
+        colleges.append(College(n: "name1",l: "location1",e: 0, i: UIImage(named: "1")!))
         editingButton.tag = 0
     }
     
@@ -94,6 +94,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         alert.addTextFieldWithConfigurationHandler
             { (textField) -> Void in
                 textField.placeholder = "Add Number Here"
+                textField.keyboardType = UIKeyboardType.NumberPad;
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         alert.addAction(cancelAction)
