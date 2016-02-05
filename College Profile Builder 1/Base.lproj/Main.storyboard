@@ -97,55 +97,93 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ak4-rl-fee">
-                                <rect key="frame" x="252" y="238" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ak4-rl-fee">
+                                <rect key="frame" x="262" y="235" width="77" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="locationEnded:" destination="mG4-NI-kvB" eventType="editingDidEndOnExit" id="Ndf-2i-7wn"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K4g-Xh-X0I">
-                                <rect key="frame" x="252" y="200" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K4g-Xh-X0I">
+                                <rect key="frame" x="271" y="195" width="59" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="nameEnded:" destination="mG4-NI-kvB" eventType="editingDidEndOnExit" id="WbH-KI-Hda"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kWO-5m-fda">
-                                <rect key="frame" x="252" y="276" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kWO-5m-fda">
+                                <rect key="frame" x="264" y="275" width="73" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="numberEnded:" destination="mG4-NI-kvB" eventType="editingDidEndOnExit" id="vvh-S7-wwH"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYp-xC-Wod">
-                                <rect key="frame" x="283" y="314" width="34" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYp-xC-Wod">
+                                <rect key="frame" x="283" y="315" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="savePressed:" destination="mG4-NI-kvB" eventType="touchUpInside" id="4uK-p1-dV4"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gSL-ve-XvO">
-                                <rect key="frame" x="180" y="28" width="240" height="128"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gSL-ve-XvO">
+                                <rect key="frame" x="263" y="30" width="75" height="75"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iiE-26-aSC">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fXK-64-bL2">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="d4S-eM-xm5">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iiE-26-aSC">
+                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="75" id="zep-6T-L57"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="KUd-GV-KOE"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                             </stackView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xUe-ga-TbF">
+                                <rect key="frame" x="276" y="115" width="49" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="URL"/>
+                                <connections>
+                                    <action selector="urlEnded:" destination="mG4-NI-kvB" eventType="editingDidEndOnExit" id="NWf-Ue-rXa"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVU-gh-4Q3">
+                                <rect key="frame" x="247" y="155" width="107" height="30"/>
+                                <state key="normal" title="Go to Webpage"/>
+                                <connections>
+                                    <action selector="goToWebpage:" destination="mG4-NI-kvB" eventType="touchUpInside" id="ibT-ld-UJ3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="XYp-xC-Wod" firstAttribute="top" secondItem="kWO-5m-fda" secondAttribute="bottom" constant="10" id="1a8-db-4iX"/>
-                            <constraint firstItem="ak4-rl-fee" firstAttribute="centerX" secondItem="NPc-mH-gnF" secondAttribute="centerX" id="3KM-qo-xZY"/>
-                            <constraint firstItem="ak4-rl-fee" firstAttribute="top" secondItem="K4g-Xh-X0I" secondAttribute="bottom" constant="10" id="OFZ-o5-Ojl"/>
-                            <constraint firstItem="kWO-5m-fda" firstAttribute="top" secondItem="ak4-rl-fee" secondAttribute="bottom" constant="10" id="SAw-Pf-Tj6"/>
-                            <constraint firstItem="kWO-5m-fda" firstAttribute="centerX" secondItem="NPc-mH-gnF" secondAttribute="centerX" id="a95-Hg-C8z"/>
-                            <constraint firstItem="XYp-xC-Wod" firstAttribute="centerX" secondItem="NPc-mH-gnF" secondAttribute="centerX" id="bKb-vU-bRi"/>
-                            <constraint firstItem="K4g-Xh-X0I" firstAttribute="centerX" secondItem="NPc-mH-gnF" secondAttribute="centerX" id="qtp-Fw-isx"/>
+                            <constraint firstItem="kWO-5m-fda" firstAttribute="centerX" secondItem="NPc-mH-gnF" secondAttribute="centerX" id="1tu-oA-jcD"/>
+                            <constraint firstItem="kWO-5m-fda" firstAttribute="top" secondItem="ak4-rl-fee" secondAttribute="bottom" constant="10" id="4jH-iH-38o"/>
+                            <constraint firstItem="K4g-Xh-X0I" firstAttribute="top" secondItem="aVU-gh-4Q3" secondAttribute="bottom" constant="10" id="Byt-JC-mbl"/>
+                            <constraint firstItem="aVU-gh-4Q3" firstAttribute="top" secondItem="xUe-ga-TbF" secondAttribute="bottom" constant="10" id="CNF-ir-5GL"/>
+                            <constraint firstItem="gSL-ve-XvO" firstAttribute="centerX" secondItem="NPc-mH-gnF" secondAttribute="centerX" id="Fpc-hX-8xi"/>
+                            <constraint firstItem="XYp-xC-Wod" firstAttribute="centerX" secondItem="NPc-mH-gnF" secondAttribute="centerX" id="RVx-dM-2le"/>
+                            <constraint firstItem="xUe-ga-TbF" firstAttribute="top" secondItem="gSL-ve-XvO" secondAttribute="bottom" constant="10" id="Ska-48-4Ve"/>
+                            <constraint firstItem="xUe-ga-TbF" firstAttribute="centerX" secondItem="NPc-mH-gnF" secondAttribute="centerX" id="VfA-2s-gsN"/>
+                            <constraint firstItem="aVU-gh-4Q3" firstAttribute="centerX" secondItem="NPc-mH-gnF" secondAttribute="centerX" id="WBy-tG-NHE"/>
+                            <constraint firstItem="XYp-xC-Wod" firstAttribute="top" secondItem="kWO-5m-fda" secondAttribute="bottom" constant="10" id="a3a-gh-lHV"/>
+                            <constraint firstItem="ak4-rl-fee" firstAttribute="centerX" secondItem="NPc-mH-gnF" secondAttribute="centerX" id="jYc-Io-mvy"/>
+                            <constraint firstItem="ak4-rl-fee" firstAttribute="top" secondItem="K4g-Xh-X0I" secondAttribute="bottom" constant="10" id="lFW-je-T5B"/>
+                            <constraint firstItem="gSL-ve-XvO" firstAttribute="top" secondItem="66U-8n-x7l" secondAttribute="bottom" constant="10" id="mKU-Xy-Ae0"/>
+                            <constraint firstItem="K4g-Xh-X0I" firstAttribute="centerX" secondItem="NPc-mH-gnF" secondAttribute="centerX" id="zpu-db-Aso"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -155,6 +193,7 @@
                         <outlet property="nameField" destination="K4g-Xh-X0I" id="zTX-jG-nRg"/>
                         <outlet property="numberField" destination="kWO-5m-fda" id="9UT-qj-hKr"/>
                         <outlet property="theView" destination="iiE-26-aSC" id="mLb-Kl-dEz"/>
+                        <outlet property="urlField" destination="xUe-ga-TbF" id="l9j-oY-euW"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="show" id="bH5-YJ-930"/>
                     </connections>
                 </viewController>

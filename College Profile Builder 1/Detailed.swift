@@ -7,26 +7,40 @@
 //
 
 import UIKit
+import SafariServices
 
-class Detailed: UIViewController
+class Detailed: UIViewController, SFSafariViewControllerDelegate
 {
-    var college = College()
+    var colleges = [College]()
     var index:Int = 0
-    
+    @IBOutlet var urlField: UITextField!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet var locationField: UITextField!
     @IBOutlet var numberField: UITextField!
     @IBOutlet var theView: UIImageView!
 
+    @IBAction func goToWebpage(sender: AnyObject)
+    {
+        let svc = SFSafariViewController(URL: NSURL(string: urlField.text!)!)
+        svc.delegate = self
+        self.presentViewController(svc, animated: true, completion: nil)
+    }
+    
     @IBAction func savePressed(sender: AnyObject)
     {
-        college.name = nameField.text!
-        college.location = locationField.text!
-                if let n = Int(numberField.text!)
+        colleges[index].url = urlField.text!
+        colleges[index].name = nameField.text!
+        colleges[index].location = locationField.text!
+        if let n = Int(numberField.text!)
         {
-            college.enrollment = n
+            colleges[index].enrollment = n
         }
         performSegueWithIdentifier("show", sender: self)
+    }
+    
+    @IBAction func urlEnded(sender: AnyObject)
+    {
+        sender.resignFirstResponder()
     }
     
     @IBAction func nameEnded(sender: AnyObject)
@@ -46,16 +60,17 @@ class Detailed: UIViewController
     
     override func viewDidLoad()
     {
-        nameField.text = college.name
-        locationField.text = college.location
-        numberField.text = "\(college.enrollment)"
-        theView.image = college.image
+        urlField.text = colleges[index].url
+        nameField.text = colleges[index].name
+        locationField.text = colleges[index].location
+        numberField.text = "\(colleges[index].enrollment)"
+        theView.image = colleges[index].image
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
         let dvc = segue.destinationViewController as! ViewController
-        dvc.change = college
+        dvc.colleges = colleges
         dvc.ind = index
     }
 }

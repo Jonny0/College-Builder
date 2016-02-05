@@ -19,19 +19,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet var editingButton: UIBarButtonItem!
     override func viewDidLoad()
     {
-        colleges.append(College(n: "name0",l: "location0",e: 0, i: UIImage(named: "zero")!))
-        colleges.append(College(n: "name1",l: "location1",e: 0, i: UIImage(named: "one")!))
+        if(ind == -1)
+        {
+            colleges.append(College(n: "name0",l: "location0",e: 0, u: "http://192.210.139.208/0", i: UIImage(named: "zero")!))
+            colleges.append(College(n: "name1",l: "location1",e: 0, u: "http://192.210.139.208/1", i: UIImage(named: "one")!))
+        }
         editingButton.tag = 0
     }
     
     override func viewDidAppear(animated: Bool)
     {
-        if(ind != -1)
-        {
-            colleges[ind] = change
-        }
-        ind = -1
-        tableView.reloadData()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -96,6 +93,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 textField.placeholder = "Add Number Here"
                 textField.keyboardType = UIKeyboardType.NumberPad;
         }
+        alert.addTextFieldWithConfigurationHandler
+            { (textField) -> Void in
+                textField.placeholder = "Add URL Here"
+                textField.keyboardType = UIKeyboardType.URL;
+        }
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         alert.addAction(cancelAction)
         let addAction = UIAlertAction(title: "Add", style: .Default)
@@ -103,13 +105,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 let name = (alert.textFields![0] as UITextField).text
                 let location = (alert.textFields![1] as UITextField).text
                 let num = (alert.textFields![2] as UITextField).text
+                let url =  (alert.textFields![3] as UITextField).text
                 if let x = Int(num!)
                 {
-                    self.colleges.append(College(n: name!, l: location!, e: x))
+                    self.colleges.append(College(n: name!, l: location!, e: x, u: url!))
                 }
                 else
                 {
-                    self.colleges.append(College(n: name!, l: location!, e: 0))
+                    self.colleges.append(College(n: name!, l: location!, e: 0, u: url!))
                 }
                 self.tableView.reloadData()
         }
@@ -121,8 +124,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     {
         let dvc = segue.destinationViewController as! Detailed
         let index: Int = (tableView.indexPathForSelectedRow?.row)!
-        dvc.college = colleges[index]
+        dvc.colleges = colleges
         dvc.index = index
-        
     }
 }

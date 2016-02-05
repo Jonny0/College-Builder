@@ -14,19 +14,22 @@ class College: NSObject
     var location: String = ""
     var enrollment: Int = -1
     var image: UIImage = UIImage()
+    var url: String = ""
     
-    init(n: String, l: String, e: Int)
+    init(n: String, l: String, e: Int, u: String)
     {
         name = n;
         location = l
         enrollment = e
+        url = u
     }
     
-    init(n: String, l: String, e: Int, i: UIImage)
+    init(n: String, l: String, e: Int, u: String, i: UIImage)
     {
         name = n;
         location = l
         enrollment = e
+        url = u
         image = i
     }
 
