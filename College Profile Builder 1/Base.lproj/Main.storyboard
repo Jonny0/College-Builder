@@ -128,9 +128,14 @@
                                     <action selector="savePressed:" destination="mG4-NI-kvB" eventType="touchUpInside" id="4uK-p1-dV4"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iiE-26-aSC">
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gSL-ve-XvO">
                                 <rect key="frame" x="180" y="28" width="240" height="128"/>
-                            </imageView>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iiE-26-aSC">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -138,12 +143,9 @@
                             <constraint firstItem="ak4-rl-fee" firstAttribute="centerX" secondItem="NPc-mH-gnF" secondAttribute="centerX" id="3KM-qo-xZY"/>
                             <constraint firstItem="ak4-rl-fee" firstAttribute="top" secondItem="K4g-Xh-X0I" secondAttribute="bottom" constant="10" id="OFZ-o5-Ojl"/>
                             <constraint firstItem="kWO-5m-fda" firstAttribute="top" secondItem="ak4-rl-fee" secondAttribute="bottom" constant="10" id="SAw-Pf-Tj6"/>
-                            <constraint firstItem="K4g-Xh-X0I" firstAttribute="top" secondItem="iiE-26-aSC" secondAttribute="bottom" constant="10" id="XQu-mn-Jz9"/>
                             <constraint firstItem="kWO-5m-fda" firstAttribute="centerX" secondItem="NPc-mH-gnF" secondAttribute="centerX" id="a95-Hg-C8z"/>
                             <constraint firstItem="XYp-xC-Wod" firstAttribute="centerX" secondItem="NPc-mH-gnF" secondAttribute="centerX" id="bKb-vU-bRi"/>
                             <constraint firstItem="K4g-Xh-X0I" firstAttribute="centerX" secondItem="NPc-mH-gnF" secondAttribute="centerX" id="qtp-Fw-isx"/>
-                            <constraint firstItem="iiE-26-aSC" firstAttribute="top" secondItem="66U-8n-x7l" secondAttribute="bottom" constant="10" id="teZ-su-a8f"/>
-                            <constraint firstItem="iiE-26-aSC" firstAttribute="centerX" secondItem="NPc-mH-gnF" secondAttribute="centerX" id="tgL-RJ-APl"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
