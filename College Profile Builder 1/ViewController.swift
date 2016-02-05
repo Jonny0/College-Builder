@@ -22,6 +22,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if(ind == -1)
         {
             colleges.append(College(n: "name0",l: "location0",e: 0, u: "http://192.210.139.208/0", i: UIImage(named: "zero")!))
+            
             colleges.append(College(n: "name1",l: "location1",e: 0, u: "http://192.210.139.208/1", i: UIImage(named: "one")!))
         }
         editingButton.tag = 0

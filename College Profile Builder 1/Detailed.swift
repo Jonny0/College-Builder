@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-class Detailed: UIViewController, SFSafariViewControllerDelegate
+class Detailed: UIViewController, SFSafariViewControllerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate
 {
     var colleges = [College]()
     var index:Int = 0
@@ -18,7 +18,19 @@ class Detailed: UIViewController, SFSafariViewControllerDelegate
     @IBOutlet var locationField: UITextField!
     @IBOutlet var numberField: UITextField!
     @IBOutlet var theView: UIImageView!
+    var imagePicker = UIImagePickerController()
 
+    @IBAction func selectImagePressed(sender: AnyObject)
+    {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum)
+        {
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary;
+            //imagePicker.allowsEditing = false
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func goToWebpage(sender: AnyObject)
     {
         let svc = SFSafariViewController(URL: NSURL(string: urlField.text!)!)
@@ -31,6 +43,7 @@ class Detailed: UIViewController, SFSafariViewControllerDelegate
         colleges[index].url = urlField.text!
         colleges[index].name = nameField.text!
         colleges[index].location = locationField.text!
+        colleges[index].image = theView.image!
         if let n = Int(numberField.text!)
         {
             colleges[index].enrollment = n
@@ -72,5 +85,13 @@ class Detailed: UIViewController, SFSafariViewControllerDelegate
         let dvc = segue.destinationViewController as! ViewController
         dvc.colleges = colleges
         dvc.ind = index
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
+    {
+        picker.dismissViewControllerAnimated(true, completion:
+        {
+            self.theView.image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        })
     }
 }
